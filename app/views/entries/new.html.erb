@@ -1,1 +1,23 @@
-<h1>Hi I am a view. This is where you'll be typing the WRITE STUFF</h1>
+<%= form_with scope: :entry, url: entries_path, local: true do |form| %>
+
+    <!--
+    <p>
+        <%= form.label :prompt %><br>
+        <%= form.text_field :prompt%><br>
+    </p>
+    -->
+
+    <p>
+        <h2>Now type the WRITE STUFF</h2>
+        <%= form.text_area :content%><br>
+    </p>
+
+    <p>
+        <div>Word count: I dunno what am I a wizard?</div>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+
+<% end %>
