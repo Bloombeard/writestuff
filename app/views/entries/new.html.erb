@@ -20,13 +20,6 @@
 
     <script>
 
-        //What do we want:
-        //Get a string from the above text_area
-        //split string on spaces
-        //fill array with individual words
-        //count items in array
-        //return array.length to word count div below
-
         document.getElementsByTagName("textarea")[0].addEventListener("keyup",  wordCount);
 
         function wordCount()
@@ -37,6 +30,11 @@
             wordcount = text_array.length;
             wordcount_elem = document.getElementById("count");
             wordcount_elem.innerHTML = wordcount;
+            
+            if (wordcount >= 10)
+            {
+                alert("Wow good job");
+            }  
         }
     
     </script>
