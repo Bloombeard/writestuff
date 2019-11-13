@@ -1,4 +1,9 @@
 class EntriesController < ApplicationController
+    
+    def show
+        @entry = Entry.find(params[:id])
+    end
+    
     def new
     end
 
@@ -8,6 +13,7 @@ class EntriesController < ApplicationController
         @entry.save
         redirect_to @entry
     end
+
 
     private
         def entry_params
