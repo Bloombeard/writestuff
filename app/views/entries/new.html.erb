@@ -13,8 +13,33 @@
     </p>
 
     <p>
-        <div>Word count: I dunno what am I a wizard?</div>
+        <div>
+        Word count: <div id="count"></div>
+        </div>
     </p>
+
+    <script>
+
+        //What do we want:
+        //Get a string from the above text_area
+        //split string on spaces
+        //fill array with individual words
+        //count items in array
+        //return array.length to word count div below
+
+        document.getElementsByTagName("textarea")[0].addEventListener("keyup",  wordCount);
+
+        function wordCount()
+        {
+            text = document.getElementsByTagName("textarea")[0];
+            text = text.value;
+            text_array = text.split(" ");
+            wordcount = text_array.length;
+            wordcount_elem = document.getElementById("count");
+            wordcount_elem.innerHTML = wordcount;
+        }
+    
+    </script>
 
     <p>
         <%= form.submit %>

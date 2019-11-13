@@ -1,0 +1,14 @@
+<h1>W R I T E S T U F F</h1>
+
+<table>
+    <tr>
+        <th>Date Added</th>
+    </tr>
+
+    <% @entries.each do |entry| %>
+        <tr>
+            <td><%= entry.created_at %></td>
+            <td><%= link_to 'Show', entry_path(entry) %></td>
+        </tr>
+    <% end %>
+</table>
