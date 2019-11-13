@@ -20,21 +20,25 @@
 
     <script>
 
-        document.getElementsByTagName("textarea")[0].addEventListener("keyup",  wordCount);
+        document.getElementsByTagName("textarea")[0].addEventListener("keyup",  updateWordCount);
 
-        function wordCount()
+        function updateWordCount()
         {
             text = document.getElementsByTagName("textarea")[0];
-            text = text.value;
-            text_array = text.split(" ");
-            wordcount = text_array.length;
+            wordcount = wordCount(text.value);
             wordcount_elem = document.getElementById("count");
             wordcount_elem.innerHTML = wordcount;
             
-            if (wordcount >= 10)
-            {
-                alert("Wow good job");
-            }  
+            // if (wordcount >= 10)
+            // {
+            //     alert("Wow good job");
+            // }  
+        }
+
+        function wordCount(text)
+        {
+            words = text.split(" ");
+            return words.length;
         }
     
     </script>
